@@ -455,16 +455,25 @@ img, video, svg{
   *{ transition: none !important; scroll-behavior:auto !important; }
 }
 
+.hero-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ← pousse les logos à droite */
+  gap: 1rem;
+  width: 100%;
+}
+
 .hero-logos {
   display: flex;
   align-items: center;
-  gap: 1rem; /* espace adaptable */
+  gap: 1rem;
+  margin-left: auto; /* sécurité supplémentaire */
 }
 
 .hero-logo {
   height: clamp(1.5rem, 2.5vw, 2.2rem);
   width: auto;
-  max-width: 100%;
+  object-fit: contain;
 }
 
 /* ===============================
