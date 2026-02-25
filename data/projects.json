@@ -1,21 +1,26 @@
 [
   {
-    "title": "Déploiement GitHub Pages",
-    "category": "perso",
+    "title": "Projet entreprise — ( compléter)",
+    "category": "entreprise",
     "date": "2026-02-25",
-    "stack": "HTML • CSS • GitHub Pages",
-    "summary": "Mise en ligne d’un portfolio responsive.",
+    "stack": "À définir (ex: GLPI • AD • Linux)",
+    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
     "url": "pages/projets.html"
-  }
-]
-
-[
+  },
   {
-    "title": "Déploiement GitHub Pages",
-    "category": "école",
-    "date": "2026-02-25",
-    "stack": "HTML • CSS • GitHub Pages",
-    "summary": "Mise en ligne d’un portfolio responsive.",
+    "title": "Projet école — (à compléter)",
+    "category": "ecole",
+    "date": "2026-02-20",
+    "stack": "À définir (ex: HTML • CSS • SQL)",
+    "summary": "Sujet du projet + apprentissage principal + résultat.",
+    "url": "pages/projets.html"
+  },
+  {
+    "title": "Projet perso — (à compléter)",
+    "category": "perso",
+    "date": "2026-02-10",
+    "stack": "À définir (ex: GitHub Pages • Docker)",
+    "summary": "Mini projet perso : objectif + résultat en une phrase.",
     "url": "pages/projets.html"
   }
 ]
