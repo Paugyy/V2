@@ -1,0 +1,86 @@
+/* Complément page projets (style cohérent index.css) */
+
+.page-projets{
+  display: grid;
+  gap: 16px;
+}
+
+/* Filtres */
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin: 10px 0 14px;
+}
+
+.chip{
+  border: 1px solid rgba(214,181,109,0.18);
+  background: rgba(214,181,109,0.08);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.chip:hover{
+  transform: translateY(-1px);
+  border-color: rgba(214,181,109,0.26);
+}
+
+.chip.is-active{
+  background: rgba(214,181,109,0.14);
+  border-color: rgba(214,181,109,0.32);
+}
+
+/* Grille */
+.grid{
+  display:grid;
+  gap:14px;
+}
+
+/* Cartes */
+.project-card{
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(0,0,0,0.18);
+  box-shadow: var(--shadow2);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  min-height: 170px;
+}
+
+.project-card:hover{
+  transform: translateY(-3px);
+  border-color: rgba(214,181,109,0.24);
+  box-shadow: var(--shadow);
+}
+
+.project-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.project-bottom{
+  margin-top:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (min-width: 780px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1020px){
+  .grid{ grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paugy Yannis — Portfolio BTS SIO</title>
+  <meta name="description" content="Portfolio BTS SIO : profil, compétences, projets, contact." />
+
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">PY</span>
+      <span class="brand__text">Paugy Yannis</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="pages/profil.html">Profil</a>
+      <a href="pages/competences.html">Compétences</a>
+      <a href="pages/projets.html">Projets</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO (garde ton contenu si tu veux) -->
+    <section class="hero hero--simple">
+      <p class="pill">BTS SIO • Option <strong>SISR</strong></p>
+      <h1 class="title">Portfolio <span class="title__accent">professionnel</span></h1>
+      <p class="lead">
+        2–3 lignes : ton objectif (stage/alternance), ton domaine (dev, réseau, cyber…),
+        et ce que tu maîtrises.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn--gold" href="pages/projets.html">Voir mes projets</a>
+        <a class="btn btn--ghost" href="pages/contact.html">Me contacter</a>
+      </div>
+
+      <div class="hero__meta">
+        <span>📍 Ville</span>
+        <span>🛠 Linux • Docker • Web • SQL</span>
+        <span>🔗 GitHub : Paugyy</span>
+      </div>
+    </section>
+
+    <!-- PROJETS À LA UNE (auto + défilement) -->
+    <section class="section">
+      <div class="section__head">
+        <h2 class="h2">Projets à la une</h2>
+        <a class="btn btn--small" href="pages/projets.html">Tous les projets</a>
+      </div>
+
+      <div class="carousel" id="featuredCarousel" aria-label="Carrousel projets à la une">
+        <div class="carousel__track" id="featuredTrack">
+          <!-- Rempli automatiquement par js/projects.js -->
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:10px">
+        Ajoute un projet dans <code>data/projects.json</code> → il apparaît ici automatiquement.
+      </p>
+    </section>
+
+    <!-- BTS -->
+    <section class="section">
+      <h2 class="h2">BTS SIO</h2>
+      <p class="muted">
+        Décris ton option (SISR/SLAM), ce que tu apprends et ce que tu vises (cyber, dev, admin…).
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nom Prénom</p>
+      <p class="muted">Portfolio BTS SIO • HTML/CSS • GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="js/projects.js"></script>
+</body>
+</html>
