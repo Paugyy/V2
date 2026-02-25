@@ -457,7 +457,7 @@ img, video, svg{
 
 .hero-badges {
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: space-between; /* ← pousse les logos à droite */
   gap: 1rem;
   width: 100%;
