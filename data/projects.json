@@ -8,3 +8,14 @@
     "url": "pages/projets.html"
   }
 ]
+
+[
+  {
+    "title": "Déploiement GitHub Pages",
+    "category": "école",
+    "date": "2026-02-25",
+    "stack": "HTML • CSS • GitHub Pages",
+    "summary": "Mise en ligne d’un portfolio responsive.",
+    "url": "pages/projets.html"
+  }
+]
