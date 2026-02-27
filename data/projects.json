@@ -16,19 +16,19 @@
     "url": "pages/projets.html"
   },
   {
-    "title": "Projet perso — (à compléter)",
-    "category": "perso",
-    "date": "2026-02-10",
-    "stack": "À définir (ex: GitHub Pages • Docker)",
-    "summary": "Mini projet perso : objectif + résultat en une phrase.",
+    "title": "Projet entreprise — ( compléter)",
+    "category": "entreprise",
+    "date": "2026-02-25",
+    "stack": "À définir (ex: GLPI • AD • Linux)",
+    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
     "url": "pages/projets.html"
   },
   {
-    "title": "Projet perso — (à compléter)",
-    "category": "perso",
-    "date": "2026-02-10",
-    "stack": "À définir (ex: GitHub Pages • Docker)",
-    "summary": "Mini projet perso : objectif + résultat en une phrase.",
+    "title": "Projet entreprise — ( compléter)",
+    "category": "entreprise",
+    "date": "2026-02-25",
+    "stack": "À définir (ex: GLPI • AD • Linux)",
+    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
     "url": "pages/projets.html"
   }
 ]
