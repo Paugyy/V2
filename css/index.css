@@ -467,7 +467,7 @@ img, video, svg{
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
 .hero-logo {
