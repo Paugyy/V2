@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil — Nom Prénom</title>
+  <meta name="description" content="Profil, parcours et objectifs professionnels." />
+
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/profil.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">NP</span>
+      <span class="brand__text">Nom Prénom</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="profil.html" aria-current="page">Profil</a>
+      <a href="competences.html">Compétences</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container page-profil">
+    <section class="section">
+      <p class="pill">BTS SIO • Profil</p>
+      <h1 class="title">Mon <span class="title__accent">profil</span></h1>
+      <p class="muted">
+        Étudiant en BTS SIO option SISR. Passionné par l’informatique, l’administration
+        système, les réseaux et les environnements techniques modernes.
+      </p>
+    </section>
+
+    <section class="profil-grid">
+      <article class="card">
+        <h2 class="h2">Présentation</h2>
+        <p class="muted">
+          Je suis actuellement étudiant en BTS SIO et je développe progressivement mes
+          compétences en systèmes, réseaux, virtualisation, hébergement web et outils collaboratifs.
+        </p>
+        <p class="muted">
+          À travers mes projets, j’apprends à concevoir, organiser et déployer des solutions
+          techniques de manière structurée et professionnelle.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Objectifs</h2>
+        <ul class="muted">
+          <li>Renforcer mes compétences en administration système et réseau</li>
+          <li>Acquérir de l’expérience à travers des projets concrets</li>
+          <li>Développer un portfolio propre et professionnel</li>
+          <li>Poursuivre dans un environnement technique stimulant</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">Parcours</h2>
+
+      <div class="timeline">
+        <article class="timeline__item">
+          <span class="timeline__date">2025 - 2026</span>
+          <div class="timeline__content">
+            <h3 class="h3">BTS SIO</h3>
+            <p class="muted">
+              Formation orientée systèmes, réseaux, services informatiques et bonnes pratiques professionnelles.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <span class="timeline__date">Avant</span>
+          <div class="timeline__content">
+            <h3 class="h3">À compléter</h3>
+            <p class="muted">
+              Tu peux ajouter ici ton parcours précédent, tes expériences ou ton orientation.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="h2">Qualités</h2>
+      <div class="softskills">
+        <span>Rigueur</span>
+        <span>Autonomie</span>
+        <span>Organisation</span>
+        <span>Curiosité</span>
+        <span>Persévérance</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nom Prénom</p>
+      <p class="muted">Portfolio BTS SIO</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
