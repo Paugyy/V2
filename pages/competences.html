@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compétences — Nom Prénom</title>
+  <meta name="description" content="Compétences techniques et outils." />
+
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/competences.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">NP</span>
+      <span class="brand__text">Nom Prénom</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="profil.html">Profil</a>
+      <a href="competences.html" aria-current="page">Compétences</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container page-competences">
+    <section class="section">
+      <p class="pill">BTS SIO • Compétences</p>
+      <h1 class="title">Mes <span class="title__accent">compétences</span></h1>
+      <p class="muted">
+        Voici un aperçu de mes compétences techniques et des outils que j’utilise.
+      </p>
+    </section>
+
+    <section class="skills-grid">
+      <article class="card skill-card">
+        <h2 class="h2">Systèmes & Réseaux</h2>
+
+        <div class="skill">
+          <span>Linux</span>
+          <div class="bar"><div style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Docker</span>
+          <div class="bar"><div style="width: 70%"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Apache</span>
+          <div class="bar"><div style="width: 65%"></div></div>
+        </div>
+      </article>
+
+      <article class="card skill-card">
+        <h2 class="h2">Développement Web</h2>
+
+        <div class="skill">
+          <span>HTML</span>
+          <div class="bar"><div style="width: 85%"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>CSS</span>
+          <div class="bar"><div style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="bar"><div style="width: 55%"></div></div>
+        </div>
+      </article>
+
+      <article class="card skill-card">
+        <h2 class="h2">Base de données</h2>
+
+        <div class="skill">
+          <span>SQL</span>
+          <div class="bar"><div style="width: 65%"></div></div>
+        </div>
+
+        <div class="skill">
+          <span>Modélisation</span>
+          <div class="bar"><div style="width: 50%"></div></div>
+        </div>
+      </article>
+
+      <article class="card skill-card">
+        <h2 class="h2">Outils</h2>
+        <ul class="tool-list muted">
+          <li>Git / GitHub</li>
+          <li>VS Code</li>
+          <li>Debian</li>
+          <li>VirtualBox</li>
+          <li>Windows</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nom Prénom</p>
+      <p class="muted">Portfolio BTS SIO</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
