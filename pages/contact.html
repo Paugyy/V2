@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Nom Prénom</title>
+  <meta name="description" content="Me contacter via le formulaire." />
+
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/contact.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">NP</span>
+      <span class="brand__text">Nom Prénom</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="../index.html">Accueil</a>
+      <a href="profil.html">Profil</a>
+      <a href="competences.html">Compétences</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container page-contact">
+    <section class="section">
+      <p class="pill">BTS SIO • Contact</p>
+      <h1 class="title">Me <span class="title__accent">contacter</span></h1>
+      <p class="muted">
+        Tu peux m’envoyer un message via ce formulaire.
+      </p>
+    </section>
+
+    <section class="contact-grid">
+      <article class="card">
+        <h2 class="h2">Formulaire</h2>
+
+        <form class="contact-form"
+              action="https://formspree.io/f/TON_ID"
+              method="POST">
+
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input id="subject" name="subject" type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="7" required></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio BTS SIO">
+          <input type="hidden" name="_captcha" value="false">
+
+          <button type="submit" class="btn btn--gold">Envoyer</button>
+        </form>
+      </article>
+
+      <article class="card">
+        <h2 class="h2">Informations</h2>
+        <ul class="contact-info muted">
+          <li><strong>Email :</strong> tonmail@exemple.com</li>
+          <li><strong>GitHub :</strong> Paugyy</li>
+          <li><strong>Disponibilité :</strong> à compléter</li>
+        </ul>
+
+        <p class="muted">
+          Pour rendre ce formulaire fonctionnel, crée un formulaire sur Formspree
+          et remplace <code>TON_ID</code> par ton identifiant.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Nom Prénom</p>
+      <p class="muted">Portfolio BTS SIO</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
