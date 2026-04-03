@@ -4,19 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ressources — Paugy Yannis</title>
-  <meta name="description" content="Ressources techniques et outils." />
-
+  <meta name="description" content="Procédures et ressources techniques." />
   <link rel="stylesheet" href="../css/index.css" />
   <link rel="stylesheet" href="../css/ressources.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
   <header class="topbar">
     <a class="brand" href="../index.html">
       <span class="brand__mark">PY</span>
       <span class="brand__text">Paugy Yannis</span>
     </a>
-
     <nav class="nav" aria-label="Navigation principale">
       <a href="../index.html">Accueil</a>
       <a href="profil.html">Profil</a>
@@ -27,78 +26,131 @@
   </header>
 
   <main class="container page-ressources">
-    <section class="section">
+    <section class="res-header">
       <p class="pill">BTS SIO • Ressources</p>
       <h1 class="title">Mes <span class="title__accent">ressources</span></h1>
-      <p class="muted">
-        Voici un aperçu de mes ressources techniques et des outils que j’utilise.
-      </p>
+      <p class="muted">Retrouvez toutes mes procédures et documentations techniques.</p>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="searchInput" class="search-input" type="text" placeholder="Rechercher une procédure..." autocomplete="off" />
+        <kbd class="search-kbd">⌘K</kbd>
+      </div>
     </section>
 
-    <section class="skills-grid">
-      <article class="card skill-card">
-        <h2 class="h2">Systèmes & Réseaux</h2>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-cat="all">Tout</button>
+      <button class="filter-btn" data-cat="systeme">Système</button>
+      <button class="filter-btn" data-cat="reseau">Réseau</button>
+      <button class="filter-btn" data-cat="web">Web</button>
+      <button class="filter-btn" data-cat="bdd">Base de données</button>
+      <button class="filter-btn" data-cat="outils">Outils</button>
+    </div>
 
-        <div class="skill">
-          <span>Linux</span>
-          <div class="bar"><div style="width: 20%"></div></div>
+    <div class="res-grid" id="resGrid">
+
+      <button class="res-card" data-cat="systeme" data-title="Installation Debian" data-content="&lt;h2&gt;Installation Debian&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Système&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Prérequis&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;ISO Debian 12 (Bookworm)&lt;/li&gt;&lt;li&gt;VirtualBox ou machine physique&lt;/li&gt;&lt;li&gt;Minimum 20 Go d'espace disque&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Étapes&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Télécharger l'ISO sur &lt;code&gt;debian.org&lt;/code&gt;&lt;/li&gt;&lt;li&gt;Créer une VM dans VirtualBox (2 Go RAM minimum)&lt;/li&gt;&lt;li&gt;Démarrer sur l'ISO et choisir &lt;em&gt;Graphical Install&lt;/em&gt;&lt;/li&gt;&lt;li&gt;Configurer la langue, le clavier et le fuseau horaire&lt;/li&gt;&lt;li&gt;Partitionner le disque (méthode guidée recommandée)&lt;/li&gt;&lt;li&gt;Choisir les paquets de base + serveur SSH&lt;/li&gt;&lt;li&gt;Installer GRUB sur le MBR&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Post-installation&lt;/h3&gt;&lt;pre&gt;apt update &amp;amp;&amp;amp; apt upgrade -y&lt;br&gt;apt install sudo vim -y&lt;br&gt;usermod -aG sudo monuser&lt;/pre&gt;">
+        <div class="res-card__icon">🐧</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Système</span>
+          <h3 class="res-card__title">Installation Debian</h3>
+          <p class="res-card__desc">Installation complète d'un système Debian 12</p>
         </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-        <div class="skill">
-          <span>Docker</span>
-          <div class="bar"><div style="width: 20%"></div></div>
+      <button class="res-card" data-cat="systeme" data-title="Configuration SSH" data-content="&lt;h2&gt;Configuration SSH&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Système&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Installation&lt;/h3&gt;&lt;pre&gt;apt install openssh-server -y&lt;br&gt;systemctl enable ssh&lt;br&gt;systemctl start ssh&lt;/pre&gt;&lt;h3&gt;Paramètres clés (/etc/ssh/sshd_config)&lt;/h3&gt;&lt;pre&gt;Port 22&lt;br&gt;PermitRootLogin no&lt;br&gt;PasswordAuthentication yes&lt;br&gt;PubkeyAuthentication yes&lt;/pre&gt;&lt;h3&gt;Connexion client&lt;/h3&gt;&lt;pre&gt;ssh utilisateur@adresse_ip&lt;/pre&gt;&lt;h3&gt;Clés SSH&lt;/h3&gt;&lt;pre&gt;ssh-keygen -t ed25519 -C 'commentaire'&lt;br&gt;ssh-copy-id utilisateur@serveur&lt;/pre&gt;">
+        <div class="res-card__icon">🔐</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Système</span>
+          <h3 class="res-card__title">Configuration SSH</h3>
+          <p class="res-card__desc">Mise en place et sécurisation d'un accès SSH</p>
         </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-        <div class="skill">
-          <span>Apache</span>
-          <div class="bar"><div style="width: 20%"></div></div>
+      <button class="res-card" data-cat="systeme" data-title="Gestion des utilisateurs" data-content="&lt;h2&gt;Gestion des utilisateurs Linux&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Système&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Créer un utilisateur&lt;/h3&gt;&lt;pre&gt;adduser nomutilisateur&lt;br&gt;usermod -aG sudo nomutilisateur&lt;/pre&gt;&lt;h3&gt;Modifier&lt;/h3&gt;&lt;pre&gt;usermod -l nouveaunom anciennom&lt;/pre&gt;&lt;h3&gt;Supprimer&lt;/h3&gt;&lt;pre&gt;deluser --remove-home nomutilisateur&lt;/pre&gt;&lt;h3&gt;Lister&lt;/h3&gt;&lt;pre&gt;cat /etc/passwd&lt;/pre&gt;">
+        <div class="res-card__icon">👤</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Système</span>
+          <h3 class="res-card__title">Gestion des utilisateurs</h3>
+          <p class="res-card__desc">Créer, modifier et supprimer des comptes Linux</p>
         </div>
-      </article>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-      <article class="card skill-card">
-        <h2 class="h2">Développement Web</h2>
-
-        <div class="skill">
-          <span>HTML</span>
-          <div class="bar"><div style="width: 10%"></div></div>
+      <button class="res-card" data-cat="reseau" data-title="Configuration réseau Debian" data-content="&lt;h2&gt;Configuration réseau Debian&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Réseau&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Fichier de config&lt;/h3&gt;&lt;pre&gt;/etc/network/interfaces&lt;/pre&gt;&lt;h3&gt;IP statique&lt;/h3&gt;&lt;pre&gt;auto eth0&lt;br&gt;iface eth0 inet static&lt;br&gt;  address 192.168.1.10&lt;br&gt;  netmask 255.255.255.0&lt;br&gt;  gateway 192.168.1.1&lt;br&gt;  dns-nameservers 8.8.8.8&lt;/pre&gt;&lt;h3&gt;Redémarrer&lt;/h3&gt;&lt;pre&gt;systemctl restart networking&lt;/pre&gt;&lt;h3&gt;Vérifier&lt;/h3&gt;&lt;pre&gt;ip a&lt;br&gt;ping 8.8.8.8&lt;/pre&gt;">
+        <div class="res-card__icon">🌐</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Réseau</span>
+          <h3 class="res-card__title">Configuration réseau Debian</h3>
+          <p class="res-card__desc">IP statique, passerelle, DNS sous Debian</p>
         </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-        <div class="skill">
-          <span>CSS</span>
-          <div class="bar"><div style="width: 10%"></div></div>
+      <button class="res-card" data-cat="reseau" data-title="Commandes réseau utiles" data-content="&lt;h2&gt;Commandes réseau utiles&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Réseau&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Diagnostic&lt;/h3&gt;&lt;pre&gt;ping adresse&lt;br&gt;traceroute adresse&lt;br&gt;nslookup domaine&lt;/pre&gt;&lt;h3&gt;Interfaces&lt;/h3&gt;&lt;pre&gt;ip a&lt;br&gt;ip route show&lt;/pre&gt;&lt;h3&gt;Ports ouverts&lt;/h3&gt;&lt;pre&gt;ss -tuln&lt;br&gt;nmap -sV adresse&lt;/pre&gt;">
+        <div class="res-card__icon">📡</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Réseau</span>
+          <h3 class="res-card__title">Commandes réseau utiles</h3>
+          <p class="res-card__desc">Diagnostic, interfaces, ports et captures</p>
         </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-        <div class="skill">
-          <span>JavaScript</span>
-          <div class="bar"><div style="width: 10%"></div></div>
+      <button class="res-card" data-cat="web" data-title="Installation Apache2" data-content="&lt;h2&gt;Installation Apache2&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Web&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Installation&lt;/h3&gt;&lt;pre&gt;apt install apache2 -y&lt;br&gt;systemctl enable apache2&lt;/pre&gt;&lt;h3&gt;Dossiers clés&lt;/h3&gt;&lt;pre&gt;/etc/apache2/        → config&lt;br&gt;/var/www/html/       → racine web&lt;/pre&gt;&lt;h3&gt;VirtualHost&lt;/h3&gt;&lt;pre&gt;&amp;lt;VirtualHost *:80&amp;gt;&lt;br&gt;  ServerName monsite.local&lt;br&gt;  DocumentRoot /var/www/monsite&lt;br&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/pre&gt;&lt;h3&gt;Activer le site&lt;/h3&gt;&lt;pre&gt;a2ensite monsite.conf&lt;br&gt;systemctl reload apache2&lt;/pre&gt;">
+        <div class="res-card__icon">🖥️</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Web</span>
+          <h3 class="res-card__title">Installation Apache2</h3>
+          <p class="res-card__desc">Déployer et configurer un serveur Apache2</p>
         </div>
-      </article>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-      <article class="card skill-card">
-        <h2 class="h2">Base de données</h2>
-
-        <div class="skill">
-          <span>SQL</span>
-          <div class="bar"><div style="width: 20%"></div></div>
+      <button class="res-card" data-cat="web" data-title="Docker — bases" data-content="&lt;h2&gt;Docker — bases&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Web&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Installation&lt;/h3&gt;&lt;pre&gt;apt install docker.io -y&lt;br&gt;systemctl enable docker&lt;br&gt;usermod -aG docker monuser&lt;/pre&gt;&lt;h3&gt;Commandes essentielles&lt;/h3&gt;&lt;pre&gt;docker pull image:tag&lt;br&gt;docker run -d -p 80:80 --name monc image&lt;br&gt;docker ps&lt;br&gt;docker stop monc&lt;/pre&gt;&lt;h3&gt;Docker Compose&lt;/h3&gt;&lt;pre&gt;docker-compose up -d&lt;br&gt;docker-compose down&lt;/pre&gt;">
+        <div class="res-card__icon">🐳</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Web</span>
+          <h3 class="res-card__title">Docker — bases</h3>
+          <p class="res-card__desc">Conteneurisation et commandes Docker essentielles</p>
         </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-        <div class="skill">
-          <span>Modélisation</span>
-          <div class="bar"><div style="width: 50%"></div></div>
+      <button class="res-card" data-cat="bdd" data-title="Installation MySQL" data-content="&lt;h2&gt;Installation MySQL&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Base de données&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Installation&lt;/h3&gt;&lt;pre&gt;apt install mysql-server -y&lt;br&gt;mysql_secure_installation&lt;/pre&gt;&lt;h3&gt;Connexion&lt;/h3&gt;&lt;pre&gt;mysql -u root -p&lt;/pre&gt;&lt;h3&gt;Commandes SQL&lt;/h3&gt;&lt;pre&gt;SHOW DATABASES;&lt;br&gt;CREATE DATABASE mabase;&lt;br&gt;USE mabase;&lt;br&gt;SHOW TABLES;&lt;/pre&gt;&lt;h3&gt;Créer un utilisateur&lt;/h3&gt;&lt;pre&gt;CREATE USER 'user'@'localhost' IDENTIFIED BY 'mdp';&lt;br&gt;GRANT ALL PRIVILEGES ON mabase.* TO 'user'@'localhost';&lt;br&gt;FLUSH PRIVILEGES;&lt;/pre&gt;">
+        <div class="res-card__icon">🗄️</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Base de données</span>
+          <h3 class="res-card__title">Installation MySQL</h3>
+          <p class="res-card__desc">Installer et configurer MySQL sur Debian</p>
         </div>
-      </article>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
 
-      <article class="card skill-card">
-        <h2 class="h2">Outils</h2>
-        <ul class="tool-list muted">
-          <li>Git / GitHub</li>
-          <li>VS Code</li>
-          <li>Debian</li>
-          <li>VirtualBox</li>
-          <li>Windows</li>
-        </ul>
-      </article>
-    </section>
+      <button class="res-card" data-cat="outils" data-title="Git — commandes essentielles" data-content="&lt;h2&gt;Git — commandes essentielles&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Outils&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Configuration initiale&lt;/h3&gt;&lt;pre&gt;git config --global user.name 'Prénom Nom'&lt;br&gt;git config --global user.email 'mail@exemple.com'&lt;/pre&gt;&lt;h3&gt;Démarrer un dépôt&lt;/h3&gt;&lt;pre&gt;git init&lt;br&gt;git clone https://github.com/user/repo.git&lt;/pre&gt;&lt;h3&gt;Workflow quotidien&lt;/h3&gt;&lt;pre&gt;git status&lt;br&gt;git add .&lt;br&gt;git commit -m 'message'&lt;br&gt;git push origin main&lt;/pre&gt;&lt;h3&gt;Branches&lt;/h3&gt;&lt;pre&gt;git branch ma-branche&lt;br&gt;git checkout ma-branche&lt;br&gt;git merge ma-branche&lt;/pre&gt;">
+        <div class="res-card__icon">⚙️</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Outils</span>
+          <h3 class="res-card__title">Git — commandes essentielles</h3>
+          <p class="res-card__desc">Versioning, branches et workflow Git</p>
+        </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+      <button class="res-card" data-cat="outils" data-title="VirtualBox — créer une VM" data-content="&lt;h2&gt;VirtualBox — créer une VM&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Catégorie :&lt;/strong&gt; Outils&lt;/p&gt;&lt;hr&gt;&lt;h3&gt;Création&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;Cliquer sur Nouvelle&lt;/li&gt;&lt;li&gt;Choisir Linux/Debian&lt;/li&gt;&lt;li&gt;Allouer 1 Go RAM minimum&lt;/li&gt;&lt;li&gt;Créer un disque VDI de 20 Go&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Modes réseau&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;NAT&lt;/strong&gt; : Internet depuis la VM&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Réseau interne&lt;/strong&gt; : entre VMs&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Pont&lt;/strong&gt; : VM sur réseau local&lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Raccourcis&lt;/h3&gt;&lt;pre&gt;Ctrl+F  → Plein écran&lt;br&gt;Ctrl+S  → Snapshot&lt;/pre&gt;">
+        <div class="res-card__icon">📦</div>
+        <div class="res-card__body">
+          <span class="res-card__cat">Outils</span>
+          <h3 class="res-card__title">VirtualBox — créer une VM</h3>
+          <p class="res-card__desc">Créer et configurer une machine virtuelle</p>
+        </div>
+        <svg class="res-card__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+
+    </div>
+
+    <p class="no-result" id="noResult" style="display:none">Aucune procédure trouvée pour "<span id="noResultQuery"></span>".</p>
   </main>
 
   <footer class="footer">
@@ -108,8 +160,82 @@
     </div>
   </footer>
 
+  <!-- Panel -->
+  <div class="panel-overlay" id="panelOverlay"></div>
+  <aside class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Procédure">
+    <div class="panel__header">
+      <h2 class="panel__title" id="panelTitle"></h2>
+      <button class="panel__close" id="panelClose" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="panel__body" id="panelBody"></div>
+  </aside>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    const cards = document.querySelectorAll('.res-card');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const noResult = document.getElementById('noResult');
+    const noResultQuery = document.getElementById('noResultQuery');
+    const panel = document.getElementById('panel');
+    const panelOverlay = document.getElementById('panelOverlay');
+    const panelTitle = document.getElementById('panelTitle');
+    const panelBody = document.getElementById('panelBody');
+    const panelClose = document.getElementById('panelClose');
+
+    function openPanel(title, content) {
+      panelTitle.textContent = title;
+      panelBody.innerHTML = content;
+      panel.classList.add('is-open');
+      panelOverlay.classList.add('is-visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePanel() {
+      panel.classList.remove('is-open');
+      panelOverlay.classList.remove('is-visible');
+      document.body.style.overflow = '';
+    }
+
+    panelClose.addEventListener('click', closePanel);
+    panelOverlay.addEventListener('click', closePanel);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        openPanel(card.dataset.title, card.dataset.content);
+      });
+    });
+
+    let activeCat = 'all';
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat = btn.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+    document.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); }
+    });
+
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const matchCat = activeCat === 'all' || card.dataset.cat === activeCat;
+        const matchSearch = !query || card.dataset.title.toLowerCase().includes(query) || card.querySelector('.res-card__desc').textContent.toLowerCase().includes(query);
+        card.style.display = (matchCat && matchSearch) ? '' : 'none';
+        if (matchCat && matchSearch) visible++;
+      });
+      noResult.style.display = visible === 0 ? 'block' : 'none';
+      noResultQuery.textContent = query || activeCat;
+    }
   </script>
 </body>
 </html>
