@@ -1,34 +1,70 @@
 [
   {
-    "title": "Projet entreprise — ( compléter)",
+    "id": "p1",
+    "title": "Déploiement infrastructure réseau",
     "category": "entreprise",
     "date": "2026-02-25",
-    "stack": "À définir (ex: GLPI • AD • Linux)",
-    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
-    "url": "pages/projets.html"
+    "stack": "Debian • VirtualBox • Apache2 • SSH",
+    "summary": "Mise en place d'une infrastructure réseau virtuelle en entreprise.",
+    "context": "Dans le cadre de mon stage, j'ai dû déployer une infrastructure réseau complète pour un service interne.",
+    "objectifs": "Virtualiser les serveurs, configurer le réseau interne et exposer un service web.",
+    "etapes": "Création des VMs sous VirtualBox, installation de Debian 12, configuration SSH, déploiement Apache2 avec VirtualHost.",
+    "difficultes": "Gestion des conflits d'adresses IP et configuration du NAT pour l'accès Internet.",
+    "resultat": "Infrastructure opérationnelle avec 3 serveurs virtualisés et un service web accessible en interne.",
+    "procedures": [
+      { "titre": "Installation Debian", "cat": "systeme" },
+      { "titre": "Configuration SSH", "cat": "systeme" },
+      { "titre": "Configuration réseau Debian", "cat": "reseau" },
+      { "titre": "Installation Apache2", "cat": "web" }
+    ]
   },
   {
-    "title": "Projet école — (à compléter)",
+    "id": "p2",
+    "title": "Site portfolio BTS SIO",
     "category": "ecole",
     "date": "2026-02-20",
-    "stack": "À définir (ex: HTML • CSS • SQL)",
-    "summary": "Sujet du projet + apprentissage principal + résultat.",
-    "url": "pages/projets.html"
+    "stack": "HTML • CSS • JavaScript • GitHub Pages",
+    "summary": "Conception et développement de mon portfolio en ligne pour le BTS SIO.",
+    "context": "Projet personnel encadré par l'école pour valoriser les réalisations du BTS.",
+    "objectifs": "Créer un portfolio responsive, sobre et professionnel hébergé sur GitHub Pages.",
+    "etapes": "Maquettage, intégration HTML/CSS, création des pages dynamiques via JavaScript et JSON.",
+    "difficultes": "Gestion du routing relatif sur GitHub Pages et adaptation mobile.",
+    "resultat": "Portfolio en ligne consultable, avec pages profil, projets, ressources et contact.",
+    "procedures": [
+      { "titre": "Git — commandes essentielles", "cat": "outils" }
+    ]
   },
   {
-    "title": "Projet entreprise — ( compléter)",
+    "id": "p3",
+    "title": "Base de données clients",
     "category": "entreprise",
-    "date": "2026-02-25",
-    "stack": "À définir (ex: GLPI • AD • Linux)",
-    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
-    "url": "pages/projets.html"
+    "date": "2026-01-10",
+    "stack": "MySQL • SQL • Modélisation",
+    "summary": "Conception et création d'une base de données de gestion clients.",
+    "context": "Besoin d'un outil de suivi clients pour le service commercial de l'entreprise.",
+    "objectifs": "Modéliser la base, créer les tables, gérer les droits d'accès et fournir des requêtes de reporting.",
+    "etapes": "Analyse des besoins, MCD/MLD, création sous MySQL, requêtes SQL d'extraction.",
+    "difficultes": "Normalisation des données et gestion des relations entre entités.",
+    "resultat": "Base de données opérationnelle avec 5 tables, 3 niveaux de droits et un jeu de requêtes documenté.",
+    "procedures": [
+      { "titre": "Installation MySQL", "cat": "bdd" }
+    ]
   },
   {
-    "title": "Projet entreprise — ( compléter)",
+    "id": "p4",
+    "title": "Déploiement Docker interne",
     "category": "entreprise",
-    "date": "2026-02-25",
-    "stack": "À définir (ex: GLPI • AD • Linux)",
-    "summary": "Contexte + objectif + ce que tu as réalisé (2 lignes max).",
-    "url": "pages/projets.html"
+    "date": "2025-12-05",
+    "stack": "Docker • Docker Compose • Linux",
+    "summary": "Conteneurisation d'un service web interne via Docker Compose.",
+    "context": "Besoin de standardiser le déploiement d'une application web utilisée en interne.",
+    "objectifs": "Conteneuriser l'application, automatiser le démarrage et documenter le déploiement.",
+    "etapes": "Installation Docker, rédaction du Dockerfile et docker-compose.yml, tests de montée en charge.",
+    "difficultes": "Gestion des volumes persistants et du réseau bridge entre conteneurs.",
+    "resultat": "Service déployé en 2 commandes, stable et reproductible sur tout serveur Linux.",
+    "procedures": [
+      { "titre": "Docker — bases", "cat": "web" },
+      { "titre": "Configuration réseau Debian", "cat": "reseau" }
+    ]
   }
 ]
